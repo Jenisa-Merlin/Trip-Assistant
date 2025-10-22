@@ -1,18 +1,18 @@
+# backend/main.py
 from fastapi import FastAPI
-from database import SessionLocal, engine
-import models
+from backend.database import SessionLocal, engine
+import backend.models
+from backend.nlp_pipeline.pipeline import QueryProcessor
 
-models.Base.metadata.create_all(bind=engine)
+backend.models.Base.metadata.create_all(bind=engine)
+app = FastAPI(title="Airline Query Processor 🚀")
 
-app = FastAPI(title="Airline Request System")
+processor = QueryProcessor()
 
-# Dependency: get DB session
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+@app.post("/query")
+def handle_query(query: str):
+    result = processor.process(query)
+    return result
 
 @app.get("/")
 def root():
