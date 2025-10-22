@@ -1,6 +1,6 @@
 # sample_data.py
-from database import SessionLocal, engine
-from models import Base, Customer, Flight, Booking, Seat, Policy
+from backend.DB.database import SessionLocal, engine
+from backend.DB.models import Base, Customer, Flight, Booking, Seat, Policy
 from datetime import datetime
 
 # Create tables
