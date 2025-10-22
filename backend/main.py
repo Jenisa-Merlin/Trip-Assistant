@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+# <<<<<<< HEAD
 from fastapi import FastAPI, Request, Query
 from backend.query_processing.orchestrator import process_user_query
 
@@ -7,20 +7,20 @@ app = FastAPI(
     description="An intelligent assistant for flight bookings, cancellations, and flight status queries.",
     version="1.0.0"
 )
-=======
-# backend/main.py
-from fastapi import FastAPI
-from backend.database import engine
-import backend.models
-from backend.nlp_pipeline.pipeline import QueryProcessor
-from backend.routers.booking_router import booking_router
-from backend.routers.flight_router import flight_router
-from backend.routers.policy_router import policy_router
+# # =======
+# # backend/main.py
+# from fastapi import FastAPI
+# from backend.database import engine
+# import backend.models
+# from backend.nlp_pipeline.pipeline import QueryProcessor
+# from backend.routers.booking_router import booking_router
+# from backend.routers.flight_router import flight_router
+# from backend.routers.policy_router import policy_router
 
-backend.models.Base.metadata.create_all(bind=engine)
+# backend.models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Airline Request System")
->>>>>>> 77dab488017b2f362bf74e5cf0da616a701b9545
+# # app = FastAPI(title="Airline Request System")
+# # >>>>>>> 77dab488017b2f362bf74e5cf0da616a701b9545
 
 
 @app.get("/")
@@ -53,18 +53,18 @@ async def handle_query(request: Request):
     user_query = data.get("query")
     user_id = data.get("user_id", "default_user")
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
     if not user_query:
         return {"error": "Query text is required."}
 
     response = process_user_query(user_id, user_query)
     return {"response": response}
-=======
-@app.get("/")
-def root():
-    return {"message": "Welcome to Airline API 🚀"}
+# =======
+# @app.get("/")
+# def root():
+#     return {"message": "Welcome to Airline API 🚀"}
 
-app.include_router(booking_router, prefix="/api")
-app.include_router(flight_router, prefix="/api")
-app.include_router(policy_router, prefix="/api")
->>>>>>> 77dab488017b2f362bf74e5cf0da616a701b9545
+# app.include_router(booking_router, prefix="/api")
+# app.include_router(flight_router, prefix="/api")
+# app.include_router(policy_router, prefix="/api")
+# >>>>>>> 77dab488017b2f362bf74e5cf0da616a701b9545
