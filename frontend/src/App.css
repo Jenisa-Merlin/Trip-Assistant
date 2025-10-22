@@ -1,0 +1,103 @@
+/* Reset default margins */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #E0F7FA; /* Light teal travel theme */
+}
+
+.chat-header {
+  background-color: #00796B; /* Dark teal header */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chat-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 90%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #004D40; /* Darker teal for user */
+  color: white;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #B2DFDB; /* Light teal for bot */
+  color: #004D40;
+}
+
+.option-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.option-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #00796B;
+  color: white;
+  font-weight: bold;
+}
+
+.option-buttons button:hover {
+  background-color: #004D40;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  background-color: #004D40; /* Dark teal input background */
+  align-items: center;
+}
+
+.input-area input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.input-area button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #B2DFDB; /* Light teal send button */
+  color: #004D40;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #80CBC4;
+}
