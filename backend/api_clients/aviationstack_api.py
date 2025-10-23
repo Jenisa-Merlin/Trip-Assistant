@@ -2,7 +2,7 @@ import os
 import requests
 from datetime import datetime
 
-API_KEY = os.getenv("AVIATIONSTACK_API_KEY", "e7756e008bc428874a9335672813efe7")
+API_KEY = os.getenv("AVIATIONSTACK_API_KEY", "")
 BASE_URL = "http://api.aviationstack.com/v1/flights"
 
 def _normalize_flight_data(rec: dict) -> dict:
